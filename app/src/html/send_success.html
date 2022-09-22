@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="border-black lg:divide-y">
+  <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        py-16 lg:border-r lg:border-l lg:px-16">
+    <div class="w-full lg:mx-auto xl:w-2/3">
+
+      <!-- email form -->
+      <div class="min-h-full flex items-center justify-center py-12 px-4
+            sm:px-6 lg:px-8">
+        <div class="max-w-xl w-full space-y-8">
+          <div>
+            <div class="mt-6 lg:text-center">
+              <h2 class="title-font mb-3 text-5xl font-black tracking-tighter
+                    text-black md:text-4xl"> Congratulations!
+              </h2>
+              <!-- <p class="mt-6 text-lg text-gray-500">
+                  Operation completed successfully.
+                </p> -->
+
+              <p class="mt-2 text-lg text-gray-500">
+                {{ message }}
+              </p>
+
+              <p class="mt-2 text-lg text-gray-500">
+                You can share the following link to claim the deposited funds:
+              </p>
+
+              <div class="rounded-lg p-4 mt-4">
+                <a href="{{ claim_link }}" class="text-gray-500 underline text-sm">
+                  {{ claim_link }}
+                </a>
+              </div>
+
+              <div class="mx-auto mt-4 mb-8 h-36 w-36">
+
+                <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+                <div id="qrcode"></div>
+                <script type="text/javascript">
+                  new QRCode(document.getElementById("qrcode"), "{{ claim_link }}");
+                </script>
+              </div>
+
+              <!-- <p class="mt-10 text-gray-500">Your transaction hash: </p> -->
+              <p class="text-gray-500 tx-sm">
+                <a target="_blank" href="https://polygonscan.com/tx/{{ tx_hash }}"
+                  class="text-sm text-center underline ">Your transaction hash</a>
+              </p>
+
+
+              <p class="mt-4 text-lg text-gray-500">
+                If you have entered an email address, we will have also notified the recipient of his funds arriving!
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

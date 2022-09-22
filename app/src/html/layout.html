@@ -1,0 +1,153 @@
+<!-- TODO -->
+
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Primary Meta Tags -->
+
+  <title>Peanuts</title>
+  <meta name="title" content="Send peanuts" />
+  <meta name="description" content="The easiest way to send money" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥜</text></svg>">
+  <!-- <link rel="icon" href="./src/media/circle_mail.svg" /> -->
+
+  <!-- Open Graph / Facebook -->
+  <!--
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="#">
+		<meta property="og:title" content="Text">
+		<meta property="og:description" content="Text">
+		<meta property="og:image" content="#">
+		-->
+  <!-- Twitter -->
+  <!--
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="#">
+		<meta property="twitter:title" content="Text">
+		<meta property="twitter:description" content="Text">
+		<meta property="twitter:image" content="#">
+		-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+
+  <!-- <link rel="stylesheet" type="text/css" href="./src/css/main.css" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="mx-auto w-full bg-macosLight-300 bg-cover bg-center bg-no-repeat
+    md:bg-bodyCover">
+  <div class="fixed z-50 w-full">
+    <div class="container mx-auto border-black bg-macosLight-300 px-8 md:pl-12
+        lg:border-b lg:border-r lg:border-l lg:px-0 lg:pl-16">
+      <nav class="flex flex-wrap items-center">
+        <a href="/" class="flex items-center py-5 pr-4 leading-snug md:pr-8">
+          <div class="inline-flex items-center">
+            <span class="ml-1 text-base font-bold">🥜 Peanuts</span>
+          </div>
+        </a>
+        <div class="ml-auto inline-flex divide-black lg:divide-x">
+          <a href="/send" class="px-1 py-6 text-sm leading-snug hover:text-orange-600
+              md:px-3 lg:px-6 lg:hover:bg-macosLight-300">
+            Send
+          </a>
+
+          <a href="/#how" class="px-1 py-6 text-sm leading-snug hover:text-orange-600
+              md:px-3 lg:px-6 lg:hover:bg-macosLight-300">
+            How
+          </a>
+          <a href="/claim" class="border-black px-1 py-6 text-sm leading-snug
+              hover:text-orange-600 focus:bg-macosLight-100 md:px-3 lg:border-l
+              lg:px-6 lg:hover:bg-macosLight-300">Claim
+          </a>
+          <a href="/#links" class="border-black px-1 py-6 text-sm leading-snug
+              hover:text-orange-600 focus:bg-macosLight-100 md:px-3 lg:border-l
+              lg:px-6 lg:hover:bg-macosLight-300">Links
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  {% block content %}{% endblock %}
+
+
+  <footer class="border-t border-black" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="mx-auto max-w-7xl border-x border-b border-black bg-macosLight-300 px-4
+          pt-12 pb-4 sm:px-6 lg:px-12 lg:py-24">
+      <div class="flex flex-col lg:flex-row space-y-10 w-100 justify-center
+            text-center lg:justify-start lg:text-left">
+
+        <div class="grow text-comet">
+          <span class="text-blueGray-600 text-lg font-bold lg:text-2xl">
+            <div class="inline-flex items-center">
+              <span class="ml-1 text-base font-bold">🥜 Peanuts</span>
+
+            </div>
+          </span>
+          <p class="text-blueGray-600 text-club text-sm">
+            Send Crypto with just a <span class="italic">Link<span>
+          </p>
+        </div>
+
+        <!-- TODO: i cant get this shit to be aligned fuck -->
+        <div class="align-top my-auto">
+          <br>
+          <p class="text-blueGray-600 text-center align-top text-sm">
+            Made with 💙 by
+            <a href="https://www.twitter.com/uwwgo" target="_blank"
+              class="text-blueGray-600 underline hover:text-blue-600">Hugo</a>
+            and
+            <a href="https://www.twitter.com/k0nradurban" target="_blank"
+              class="text-blueGray-600 underline hover:text-blue-600">Konrad</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer>
+    </div>
+  </footer>
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // set some flask variables
+    var CONTRACT_ADDRESS_POLYGON_MAIN = "{{ CONTRACT_ADDRESS_POLYGON_MAIN }}";
+    var CONTRACT_ADDRESS_POLYGON_TEST = "{{ CONTRACT_ADDRESS_POLYGON_TEST }}";
+    var art = `
+ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣶⣦⣌⠙⠋⢡⣴⣶⡄⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⣿⣿⣿⡿⢋⣠⣶⣶⡌⠻⣿⠟⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡆⠸⠟⢁⣴⣿⣿⣿⣿⣿⡦⠉⣴⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠟⠀⠰⣿⣿⣿⣿⣿⣿⠟⣠⡄⠹⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢸⡿⢋⣤⣿⣄⠙⣿⣿⡿⠟⣡⣾⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⠿⠀⢠⣾⣿⣿⣿⣦⠈⠉⢠⣾⣿⣿⣿⠏⠀⠀⠀
+⠀⠀⠀⠀⣀⣤⣦⣄⠙⠋⣠⣴⣿⣿⣿⣿⠿⠛⢁⣴⣦⡄⠙⠛⠋⠁⠀⠀⠀⠀
+⠀⠀⢀⣾⣿⣿⠟⢁⣴⣦⡈⠻⣿⣿⡿⠁⡀⠚⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠘⣿⠟⢁⣴⣿⣿⣿⣿⣦⡈⠛⢁⣼⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢰⡦⠀⢴⣿⣿⣿⣿⣿⣿⣿⠟⢀⠘⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠘⢀⣶⡀⠻⣿⣿⣿⣿⡿⠋⣠⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢿⣿⣿⣦⡈⠻⣿⠟⢁⣼⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⠻⣿⣿⣿⠖⢀⠐⠿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+ `
+    console.log(art);
+  </script>
+
+  <!-- Alpine.js 3 -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+  <script defer src="/src/js/abi.js"></script>
+  <script defer src="/src/js/crypto.js"></script>
+</body>
+</body>
+
+</html>

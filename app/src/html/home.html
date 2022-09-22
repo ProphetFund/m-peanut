@@ -1,0 +1,276 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="border-b border-black lg:divide-y">
+    <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        py-16 lg:border-r lg:border-l lg:px-16">
+        <div class="w-full lg:mx-auto xl:w-2/3">
+            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16
+            lg:px-0">
+                <div class="mt-6 lg:text-center">
+                    <h2 class="title-font mb-8 text-5xl font-black tracking-tighter
+                text-black md:text-8xl">
+                        The easiest way to send crypto.
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-500">
+                        Peanuts Protocol let's you send tokens to anyone, with just a link. No need for their wallet address.
+                    </p>
+                </div>
+            </div>
+            <button type="submit" onclick="window.location.href='/send'" class="focus:ring-inset-2 focus:ring-inset-macosAccent-600 block
+            w-full sm:w-2/3 md:w-3/5 lg:w-1/2 border border-transparent bg-black
+            px-5
+            py-3 text-base font-medium text-white hover:bg-gray-600
+            focus:outline-none focus:ring-2 focus:ring-white mt-8 lg:mt-0
+            mx-auto">
+                Send &nbsp; 🥜🥜's
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="divide-y border-b border-black" id="how">
+    <div class="container relative mx-auto overflow-hidden border-black
+        bg-macosLight-300 px-5 lg:border-r lg:border-l lg:px-16">
+        <div class="relative">
+            <div class="rounded-2xl lg:mx-auto lg:grid lg:max-w-7xl
+            lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24">
+                <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none
+              lg:py-16 lg:px-0">
+                    <div class="mt-6 lg:pr-8">
+                        <h2 class="title-font mb-8 text-4xl font-black tracking-tighter
+                  text-black md:text-5xl">
+                            Make a deposit.
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-500">
+                            Select the amount you want to send, and approve the transaction.
+                            Your funds will be stored securely (and permissionlessly) in the smart contract.
+                            You'll get a link that you can share with anyone so they can claim the funds.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:mt-0 max-w-[400px]">
+                    <div class="lg:relative lg:ml-auto lg:h-full lg:px-0">
+                        <img class="w-full object-cover lg:absolute lg:h-full" src="./src/media/squareOne.png"
+                            alt="Inbox user interface" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="divide-y border-b border-black">
+    <div class="container relative mx-auto overflow-hidden border-black
+        bg-macosLight-300 px-5 lg:border-r lg:border-l lg:px-16">
+        <div class="relative">
+            <div class="rounded-2xl lg:mx-auto lg:grid lg:max-w-7xl
+            lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24">
+                <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none
+              lg:py-16 lg:px-0">
+                    <div class="mt-6 lg:pr-8">
+                        <h2 class="title-font mb-8 text-4xl font-black tracking-tighter
+                  text-black md:text-5xl">
+                            Recipient gets link.
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-500">
+                            Your beneficiary gets a link, and now can claim the funds. They can
+                            then either select to send the funds to an existing wallet
+                            address, or set up a new one on the spot where we'll send the
+                            funds to.
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="mt-2">
+              <img
+                  class="max-w-[400px]"
+                  src="./src/media/squareTwo.png"
+                  alt="Inbox user interface"
+                  />
+            </div> -->
+                <div class="lg:order-first lg:mt-0 ">
+                    <!-- <img
+                  class="max-w-[400px]"
+                  src="./src/media/squareTwo.png"
+                  alt="Inbox user interface"
+                  /> -->
+                    <div class="lg:relative lg:ml-auto lg:h-full lg:px-0 min-h-[372px]">
+                        <img class="w-full object-cover lg:absolute lg:h-full min-h-[372px]"
+                            src="./src/media/squareTwo.png" alt="Inbox user interface" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="divide-y border-b border-black">
+    <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        lg:border-r lg:border-l lg:px-16">
+        <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16
+            lg:px-0">
+                <div class="mt-6 pb-10 lg:text-center">
+                    <h2 class="title-font mb-8 text-5xl font-light tracking-tighter
+                text-black md:text-5xl">
+                        How this works.
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-500">
+                        You want to send crypto (Ethereum, or ERC-20 tokens, or
+                        ERC-721s) to someone. But you don't know their address. Or maybe
+                        they don't <span class="italic">have</span> one. Or maybe they
+                        hate crypto. Doesn't matter.
+                        You just need to know their email address, or their phone #, and we'll generate a link that you
+                        can share
+                        with them.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-500">Let's walk through what
+                        happens, in order. The sender deposits an amount of tokens in
+                        the smart contract, and a corresponding passphrase is generated.
+                        A link containing this passphrase is created, and you can now share it with the recipient (or we
+                        can email
+                        it to them for you).
+                        Thanks to zk-technology, whoever has that link can also claim the funds deposited!
+                    <p class="mt-4 text-lg text-gray-500"> This makes it really easy to send money, or erc-20 tokens, or
+                        even
+                        erc-721s (NFTs)! Just deposit them in the smart contract, and give the appropriate link to
+                        whomever you
+                        want!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="divide-y border-b border-black">
+    <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        lg:border-r lg:border-l lg:px-16">
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense
+          lg:gap-24">
+            <div class="relative mx-auto max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-8
+            lg:py-10">
+                <div class="relative lg:flex lg:items-center">
+                    <div class="lg:flex-shrink-0">
+                        <img class="h-64 w-64 xl:h-80 xl:w-80" src="src/media/vitalik.jpg" alt="" />
+                    </div>
+                    <div class="relative mt-6 md:mt-0 lg:ml-10">
+                        <blockquote class="relative">
+                            <div class="text-2xl font-medium leading-9 text-wvsc-100">
+                                <p>
+                                    "It's super easy to make a typo when sending a
+                                    transaction. ENS is cool and all but these guys rock too
+                                    🤘"
+                                </p>
+                                <footer class="text-base font-medium text-gray-500">
+                                    - Vitalik Buterin (totally not a fake quote)
+                                </footer>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense
+          lg:gap-24">
+            <div class="relative mx-auto max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-8
+            lg:py-10">
+                <div class="relative lg:flex lg:items-center">
+                    <div class="relative mt-6 md:mt-0 lg:mr-10">
+                        <blockquote class="relative">
+                            <div class="text-2xl font-medium leading-9 text-left
+                    text-wvsc-100">
+                                <p>
+                                    "Yo, sending crypto permissionlessly with just a link, this shit
+                                    is nutsss 🥜"
+                                </p>
+                                <footer class="text-base font-medium text-gray-500">
+                                    - Balaji Srinivasan (totally not a fake quote)
+                                </footer>
+                            </div>
+                        </blockquote>
+                    </div>
+
+                    <div class="lg:flex-shrink-0">
+                        <img class="h-64 w-64 xl:h-80 xl:w-80 object-cover mt-6 md:mt-0"
+                            src="https://media.wired.com/photos/593303d158b0d64bb35d40be/master/pass/balaji-srinivasan.jpg"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="divide-y border-b border-black" id="links">
+    <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+          lg:border-r lg:border-l lg:px-16">
+        <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none
+              lg:py-16
+              lg:px-0">
+                <div class="mt-6 pb-10 lg:text-center">
+                    <h2 class="title-font mb-8 text-5xl font-light tracking-tighter
+                  text-black text-center md:text-5xl">
+                        Official Links.
+                    </h2>
+                    <div class="mx-auto w-full text-center">
+                        <!-- <a href="https://looksrare.org/collections/{{ contractAddress}}" target="_blank"
+                  class="mx-1 text-center underline">LooksRare</a> -->
+                        <a href="https://polygonscan.com/address/{{ CONTRACT_ADDRESS_POLYGON_MAIN}}" target="_blank"
+                        target="_blank" class="mx-1 text-center underline">Polygonscan</a>
+                        <a href="https://mumbai.polygonscan.com/address/{{ CONTRACT_ADDRESS_POLYGON_TEST}}" target="_blank"
+                            target="_blank" class="mx-1 text-center underline">Polygonscan (test)</a>
+                        <a href="" target="_blank" class="mx-1 text-center underline">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="border-black lg:divide-y">
+    <div class="container relative mx-auto border-black bg-macosAccent-400 px-5
+          lg:border-r lg:border-l lg:px-16">
+        <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:px-0
+              lg:pt-16">
+                <div class="pb-10 pt-6 lg:text-center">
+                    <h2 class="title-font mb-8 text-5xl font-light tracking-tighter
+                  text-macosLight-300 md:text-5xl">
+                        Subscribe for when we launch new stuff
+                    </h2>
+                    <p class="text-base leading-6 text-macosLight-300">
+                        We launch cool stuff all the time, maybe there's an airdrop or a whitelist for you if you sign
+                        up :)
+                    </p>
+                </div>
+                <form class="mt-8" method="post" action="https://weightless.so/api/lists/gvufs077/subscribe"
+                    target="_blank">
+                    <div class="border border-b-0 border-black bg-macosLight-300 px-6
+                  py-4 sm:mx-auto sm:flex sm:max-w-lg">
+                        <div class="min-w-0 flex-1">
+                            <label for="cta-email" class="sr-only">Email address</label>
+                            <input id="cta-email" type="email" class="focus:ring-inset-2 focus:ring-inset-macosAccent-600
+                      block w-full border border-transparent bg-macosLight-300
+                      px-5 py-3 text-base text-gray-900 placeholder-gray-500
+                      focus:border-transparent focus:outline-none focus:ring-2
+                      focus:ring-white" placeholder="Enter your email" name="subscription[email]" />
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:ml-3">
+                            <button type="submit" class="focus:ring-inset-2 focus:ring-inset-macosAccent-600
+                      block w-full border border-transparent bg-macosAccent-500
+                      px-5 py-3 text-base font-medium text-white
+                      hover:bg-macosAccent-600 focus:outline-none focus:ring-2
+                      focus:ring-white sm:px-10">
+                                Notify me
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="border-black lg:divide-y">
+  <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        py-16 lg:border-r lg:border-l lg:px-16">
+    <div class="w-full lg:mx-auto xl:w-2/3">
+
+      <!-- email form -->
+      <div class="min-h-full flex items-center justify-center py-12 px-4
+            sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+          <div>
+            <div class="mt-6 lg:text-center">
+              <h2 class="title-font mb-3 text-5xl font-black tracking-tighter
+                    text-black md:text-4xl"> ERROR
+              </h2>
+
+              <p class="mt-6 text-lg text-gray-500">
+                {{ message }}
+              </p>
+              <p class="mt-6">Tx hash: </p>
+              <p class="text-gray-500">
+                <a target="_blank" href="https://polygonscan.com/tx/{{ tx_hash }}"
+                  class="text-sm text-center underline ">{{ tx_hash }}</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

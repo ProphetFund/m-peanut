@@ -1,0 +1,270 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="border-black lg:divide-y">
+  <div class="container relative mx-auto border-black bg-macosLight-300 px-5
+        py-16 lg:border-r lg:border-l lg:px-16">
+    <div class="w-full lg:mx-auto xl:w-2/3">
+
+      <!-- email form -->
+      <div class="min-h-full flex items-center justify-center py-12 px-4
+            sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+          <div>
+            <div class="mt-6 lg:text-center">
+              <h2 class="title-font mb-3 text-5xl font-black tracking-tighter
+                    text-black md:text-4xl">Send crypto with a <span class="glitch-letters">link</span>
+              </h2>
+              <!-- This example requires Tailwind CSS v2.0+ -->
+              <div x-data="{dropdownMenu: false}" class="relative inline-block text-left mx-auto">
+                <div class="min-w-full">
+                  <button type="button" @click="dropdownMenu = ! dropdownMenu"
+                    class="inline-flex w-full min-w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                    id="menu-button" aria-expanded="true" aria-haspopup="true">
+                    <span x-text="Alpine.store('Network')" class="text-black"></span>
+                    <!-- Heroicon name: mini/chevron-down -->
+                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                      fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!--
+                    Dropdown menu, show/hide based on menu state.
+
+                    Entering: "transition ease-out duration-100"
+                      From: "transform opacity-0 scale-95"
+                      To: "transform opacity-100 scale-100"
+                    Leaving: "transition ease-in duration-75"
+                      From: "transform opacity-100 scale-100"
+                      To: "transform opacity-0 scale-95"
+                  -->
+                <div x-show="dropdownMenu" x-transition:enter="transition ease-out duration-100"
+                  x-transition:enter-start="transform opacity-0 scale-95"
+                  x-transition:enter-end="transform opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-75"
+                  x-transition:leave-start="transform opacity-100 scale-100"
+                  x-transition:leave-end="transform opacity-0 scale-95"
+                  x-on:click.away="dropdownMenu = false"
+                  class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+
+                  <div class="border-b border-gray-300" role="none">
+                    <a class="text-gray-700  group flex items-center px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                      id="menu-item-1">
+                      <!-- Heroicon name: mini/document-duplicate -->
+                      <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" clip-rule="evenodd"
+                        fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="120 100 360 180"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="m29 10.2c-.7-.4-1.6-.4-2.4 0l-5.6 3.3-3.8 2.1-5.5 3.3c-.7.4-1.6.4-2.4 0l-4.3-2.6c-.7-.4-1.2-1.2-1.2-2.1v-5c0-.8.4-1.6 1.2-2.1l4.3-2.5c.7-.4 1.6-.4 2.4 0l4.3 2.6c.7.4 1.2 1.2 1.2 2.1v3.3l3.8-2.2v-3.4c0-.8-.4-1.6-1.2-2.1l-8-4.7c-.7-.4-1.6-.4-2.4 0l-8.2 4.8c-.8.4-1.2 1.2-1.2 2v9.4c0 .8.4 1.6 1.2 2.1l8.1 4.7c.7.4 1.6.4 2.4 0l5.5-3.2 3.8-2.2 5.5-3.2c.7-.4 1.6-.4 2.4 0l4.3 2.5c.7.4 1.2 1.2 1.2 2.1v5c0 .8-.4 1.6-1.2 2.1l-4.2 2.5c-.7.4-1.6.4-2.4 0l-4.3-2.5c-.7-.4-1.2-1.2-1.2-2.1v-3.2l-3.8 2.2v3.3c0 .8.4 1.6 1.2 2.1l8.1 4.7c.7.4 1.6.4 2.4 0l8.1-4.7c.7-.4 1.2-1.2 1.2-2.1v-9.5c0-.8-.4-1.6-1.2-2.1z"
+                          fill="#8247e5" fill-rule="nonzero" transform="matrix(7.04961 0 0 7.04961 145 81.9191)" />
+                      </svg>
+                      Polygon
+                    </a>
+                  </div>
+
+                  <a class="text-gray-700 bg-gray-200 group flex items-center px-4 py-2 text-sm" role="menuitem"
+                    tabindex="-1" id="menu-item-6">
+                    <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" width="1535" height="2500"
+                      viewBox="0 0 256 417" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                      <path fill="#343434" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z" />
+                      <path fill="#8C8C8C" d="M127.962 0L0 212.32l127.962 75.639V154.158z" />
+                      <path fill="#3C3C3B" d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.6L256 236.587z" />
+                      <path fill="#8C8C8C" d="M127.962 416.905v-104.72L0 236.585z" />
+                      <path fill="#141414" d="M127.961 287.958l127.96-75.637-127.96-58.162z" />
+                      <path fill="#393939" d="M0 212.32l127.96 75.638v-133.8z" />
+                    </svg>
+                    Ethereum
+                  </a>
+
+                </div>
+                
+              </div>
+
+
+
+
+
+              </p>
+            </div>
+          </div>
+
+
+          <!-- ==== POST FORM ==== -->
+          <form class="mt-8 space-y-6" action="/send" method="POST" id="depositForm"
+            x-data="{ optionalDropdownDeployed: false, message: '', email: '', amount: '', loading: false }">
+
+
+            <div>
+              <label for="amount" class="block text-sm font-black 
+                        text-gray-700">Amount</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex
+                          items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm"><svg class="mr-5 h-5 w-5 text-gray-400 group-hover:text-gray-500" clip-rule="evenodd"
+                    fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="140 120 340 160"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m29 10.2c-.7-.4-1.6-.4-2.4 0l-5.6 3.3-3.8 2.1-5.5 3.3c-.7.4-1.6.4-2.4 0l-4.3-2.6c-.7-.4-1.2-1.2-1.2-2.1v-5c0-.8.4-1.6 1.2-2.1l4.3-2.5c.7-.4 1.6-.4 2.4 0l4.3 2.6c.7.4 1.2 1.2 1.2 2.1v3.3l3.8-2.2v-3.4c0-.8-.4-1.6-1.2-2.1l-8-4.7c-.7-.4-1.6-.4-2.4 0l-8.2 4.8c-.8.4-1.2 1.2-1.2 2v9.4c0 .8.4 1.6 1.2 2.1l8.1 4.7c.7.4 1.6.4 2.4 0l5.5-3.2 3.8-2.2 5.5-3.2c.7-.4 1.6-.4 2.4 0l4.3 2.5c.7.4 1.2 1.2 1.2 2.1v5c0 .8-.4 1.6-1.2 2.1l-4.2 2.5c-.7.4-1.6.4-2.4 0l-4.3-2.5c-.7-.4-1.2-1.2-1.2-2.1v-3.2l-3.8 2.2v3.3c0 .8.4 1.6 1.2 2.1l8.1 4.7c.7.4 1.6.4 2.4 0l8.1-4.7c.7-.4 1.2-1.2 1.2-2.1v-9.5c0-.8-.4-1.6-1.2-2.1z"
+                      fill="#8247e5" fill-rule="nonzero" transform="matrix(7.04961 0 0 7.04961 145 81.9191)" />
+                  </svg></span>
+                </div>
+                <input required x-model="amount" name="amount" id="amount" required type="text" autocomplete="amount" class="focus:ring-indigo-500 focus:border-indigo-500
+                          block w-full pl-9 pr-12 sm:text-sm border-gray-300
+                          rounded-md" placeholder="0.00" aria-describedby="price-currency">
+                <div class="absolute inset-y-0 right-0 pr-3 flex
+                          items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm" id="price-currency"> MATIC </span>
+                  <!-- <span class="text-gray-500 sm:text-sm" id="price-currency"> USD </span> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- This example requires Tailwind CSS v2.0+ -->
+            <div class="relative hidden">
+              <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+              <button type="button"
+                x-on:click="optionalDropdownDeployed = !optionalDropdownDeployed"
+                class="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                aria-expanded="false">
+                <span>Optional</span>
+                <!--
+                  Heroicon name: mini/chevron-down
+
+                  Item active: "text-gray-600", Item inactive: "text-gray-400"
+                -->
+                <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+
+              <!--
+                Flyout menu, show/hide based on flyout menu state.
+
+                Entering: "transition ease-out duration-200"
+                  From: "opacity-0 translate-y-1"
+                  To: "opacity-100 translate-y-0"
+                Leaving: "transition ease-in duration-150"
+                  From: "opacity-100 translate-y-0"
+                  To: "opacity-0 translate-y-1"
+              -->
+              <div class="absolute left-1/2 z-10 mt-3 w-screen max-w-xs -translate-x-1/2 transform px-2 sm:px-0"
+                x-show="optionalDropdownDeployed"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-1"
+                x-on:click.away="optionalDropdownDeployed = false">
+
+                <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                    <a href="#" class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50">
+                      <p class="text-base font-medium text-gray-900">Blog</p>
+                      <p class="mt-1 text-sm text-gray-500">Learn about tips, product updates and company culture.</p>
+                    </a>
+
+                    <a href="#" class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50">
+                      <p class="text-base font-medium text-gray-900">Help Center</p>
+                      <p class="mt-1 text-sm text-gray-500">Get all of your questions answered in our forums of contact
+                        support.</p>
+                    </a>
+
+                    <a href="#" class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50">
+                      <p class="text-base font-medium text-gray-900">Guides</p>
+                      <p class="mt-1 text-sm text-gray-500">Learn how to maximize our platform to get the most out of
+                        it.</p>
+                    </a>
+
+                    <a href="#" class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50">
+                      <p class="text-base font-medium text-gray-900">Events</p>
+                      <p class="mt-1 text-sm text-gray-500">Check out webinars with experts and learn about our annual
+                        conference.</p>
+                    </a>
+
+                    <a href="#" class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50">
+                      <p class="text-base font-medium text-gray-900">Security</p>
+                      <p class="mt-1 text-sm text-gray-500">Understand how we take your privacy seriously.</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Optional -->
+            <div>
+              <label for="email" class="block text-sm font-black                  
+                    text-gray-700">Email <span class="text-gray-500 text-sm font-normal">(optional)</span></label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center
+                      pointer-events-none">
+                  <!-- Heroicon name: solid/mail -->
+                  <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor" aria-hidden="true">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016
+                          4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0
+                            002-2V8.118z" />
+                  </svg>
+                </div>
+                <input x-model="email" id="email" name="email" type="email" autocomplete="email" required class="focus:ring-indigo-500 focus:border-indigo-500
+                          block w-full pl-10 sm:text-sm border-gray-300
+                          rounded-md" placeholder="alex@example.com">
+              </div>
+            </div>
+
+            <div>
+              <label for="comment" class="block text-sm font-black text-gray-700">Message <span
+                  class="text-gray-500 text-sm font-normal">(optional)</span></label>
+              <div class="mt-1">
+                <textarea rows="2" x-model="message" name="message" id="message" maxlength="100"
+                  placeholder="&quot;Hello John here's your payment for last weeks repairs...&quot;"
+                  class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+              </div>
+            </div>
+            <!-- Connect if not connected, else submit transaction -->
+            <button x-html="Alpine.store('buttonContent')"
+              x-on:click=" Alpine.store('connected') ?  makeDeposit(amount) : Alpine.store('signer', connect())"
+              type="button" class="focus:ring-inset-2 
+                      focus:ring-inset-macosAccent-600 block
+                      w-full sm:w-2/3 md:w-3/5 lg:w-4/5 border
+                      border-transparent
+                      bg-black
+                      px-5
+                      py-3 text-base font-medium text-white hover:bg-gray-600
+                      focus:outline-none focus:ring-2 focus:ring-white 
+                      mt-8
+                      lg:mt-14
+                      mx-auto">
+            </button>
+            <div class="text-sm text-center underline mt-4">
+              <a href="https://polygonscan.com/address/{{ CONTRACT_ADDRESS_POLYGON_MAIN }}" target="_blank"
+                class="text-gray-500 hover:text-gray-600">
+                Polygonscan
+              </a>
+              <!-- <a class="text-sm text-center w-100 
+                    mt-8" href="/">
+                  Cancel
+                </a> -->
+
+            </div>
+          </form>
+          <!-- ==== POST FORM END ==== -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
